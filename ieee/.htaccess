@@ -1,3 +1,10 @@
+Header set Access-Control-Allow-Origin *
+Header set Access-Control-Allow-Headers DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified$
 Options +FollowSymLinks
 RewriteEngine on
-RewriteRule ^$ https://www.ieee.org/ [R=302,L]
+
+## IEEE 2791 Standard Schemas 
+RewriteRule ^/2791/(.*)$ https://gitlab.com/IEEE-SA/BioCompute/bco-schema/raw/master/$1 [R=302,L]
+
+## All other URLs that don't get caught above
+RewriteRule ^$ https://www.ieee.org/error/404.html [R=302,L]
