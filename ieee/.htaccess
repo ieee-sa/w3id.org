@@ -4,7 +4,7 @@ Options +FollowSymLinks
 RewriteEngine on
 
 ## IEEE 2791 Standard Schemas 
-RewriteRule ^/2791/(.*)$ https://gitlab.com/IEEE-SA/BioCompute/bco-schema/raw/master/$1 [R=302,L]
+RewriteRule ^/2791/(.*)$ https://gitlab.com/IEEE-SA/2791/ieee-2791-schema/raw/master/$1 [R=302,L]
 
 ## All other URLs that don't get caught above
 RewriteRule ^$ https://www.ieee.org/error/404.html [R=302,L]
